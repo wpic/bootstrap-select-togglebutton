@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap Select Toggle Button - Example</title>
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="row form-group">
+                <label for="example1">Select Toggle Button Example 1 : </label>
+                <select id="example1">
+                    <option>Option 1</option>
+                    <option selected>Option 2</option>
+                    <option>Option 3</option>
+                </select>
+            </div>
+            <div class="row form-group">
+                <label for="example2">Select Toggle Button Example 2 : </label>
+                <select id="example2">
+                    <option>Option A</option>
+                    <option selected>Option B</option>
+                    <option>Option C</option>
+                </select>
+
+            </div>
+            <div class="row form-group">
+                <label for="example3">Select Toggle Button Example 3 : </label>
+                <select id="example3">
+                    <option>Option a</option>
+                    <option selected>Option b</option>
+                    <option>Option c</option>
+                </select>
+
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="select-togglebutton.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('select').togglebutton();
+            })
+        </script>
+
+    </body>
+</html>
