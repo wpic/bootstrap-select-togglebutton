@@ -1,7 +1,7 @@
 bootstrap-select-togglebutton
 =============================
 
-A simple plugin jQuery to convert select boxes to Bootstrap toggle button group.
+A simple plugin [jQuery](http://jquery.com/) to convert select boxes to [Bootstrap](http://getbootstrap.com/) toggle button group.
 
 ![togglebutton screenshot](screenshot.png)
 
