@@ -1,3 +1,4 @@
+
 (function($) {
     // Define the togglebutton plugin.
     $.fn.togglebutton = function(opts) {
@@ -7,14 +8,21 @@
         // For each select element.
         this.each(function() {
             var self = $(this);
+            var multiple = this.multiple;
+
             // Retrieve all options.
             var options = self.children('option');
-            // Create buttons with the value of select options.
+            // Create an array of buttons with the value of select options.
             var buttons = options.map(function(index, opt) {
                 var button = $("<button type='button' class='btn btn-default'></button>")
-                  .prop('value', opt.value)
-                  .text(opt.text);
+                .prop('value', opt.value)
+                .text(opt.text);
 
+                // Add an `active` class if the option has been selected.
+                if (opt.selected)
+                    button.addClass("active");
+
+                // Return the button.
                 return button[0];
             });
 
@@ -23,9 +31,35 @@
             // select selected option.
             buttons.each(function(index, btn) {
                 $(btn).click(function() {
-                    $(btn).addClass("active");
-                    $(btn).siblings(".active").removeClass("active");
-                    self.val(btn.value);
+                    // Retrieve all buttons siblings of the clicked one with an
+                    // `active` class !
+                    var activeBtn = $(btn).siblings(".active");
+                    var total = [];
+
+                    // Check if the clicked button has the class `active`.
+                    // Add or remove it according to the check.
+                    if ($(btn).hasClass("active"))  {
+                        $(btn).removeClass("active");
+                    }
+                    else {
+                        $(btn).addClass("active");
+                        total.push(btn.value);
+                    }
+                   
+                    // If the select allow multiple values, remove all active
+                    // class to the other buttons (to keep only the last clicked
+                    // button).
+                    if (!multiple) {
+                        activeBtn.removeClass("active");
+                    }
+
+                    // Push all active buttons value in an array.
+                    activeBtn.each(function(index, btn) {
+                            total.push(btn.value);
+                    });
+
+                    // Change selected options of the select.
+                    self.val(total).change();
                 });
             });
 
@@ -40,7 +74,6 @@
 
     // Set the defaults options of the plugin.
     $.fn.togglebutton.defaults = {
-
     };
 
 }(jQuery));
