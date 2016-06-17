@@ -1,0 +1,20 @@
+{
+  "name": "bootstrap-select-togglebutton",
+  "version": "1.0.0",
+  "description": "jQuery plugin converting select boxes to Bootstrap toggle buttons group",
+  "main": "select-togglebutton.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wpic/bootstrap-select-togglebutton.git"
+  },
+  "keywords": [
+    "jQuery",
+    "Bootstrap",
+    "toggle button",
+    "select"
+  ],
+  "bugs": {
+    "url": "https://github.com/wpic/bootstrap-select-togglebutton/issues"
+  },
+  "homepage": "https://github.com/wpic/bootstrap-select-togglebutton#readme"
+}

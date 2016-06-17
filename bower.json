@@ -1,0 +1,16 @@
+{
+  "name": "bootstrap-select-togglebutton",
+  "homepage": "https://github.com/wpic/bootstrap-select-togglebutton",
+  "authors": [
+    "Juliette TRAN <tran.juliette.a@gmail.com>"
+  ],
+  "description": "jQuery plugin to convert select boxes to Bootstrap toggle button group.",
+  "main": "select-togglebutton.js",
+  "keywords": [
+    "toggle button",
+    "select",
+    "jQuery",
+    "Bootstrap"
+  ],
+  "license": "MIT"
+}
