@@ -36,6 +36,9 @@
                     var activeBtn = $(btn).siblings(".active");
                     var total = [];
 
+                    // Remove all selected property on options.
+                    self.children("option:selected").prop("selected", false);
+
                     // Check if the clicked button has the class `active`.
                     // Add or remove it according to the check.
                     if ($(btn).hasClass("active"))  {
@@ -43,6 +46,7 @@
                     }
                     else {
                         $(btn).addClass("active");
+                        options.val(btn.value).prop("selected", true);
                         total.push(btn.value);
                     }
                    
@@ -55,7 +59,7 @@
 
                     // Push all active buttons value in an array.
                     activeBtn.each(function(index, btn) {
-                            total.push(btn.value);
+                        total.push(btn.value);
                     });
 
                     // Change selected options of the select.
